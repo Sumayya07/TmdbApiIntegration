@@ -13,7 +13,15 @@ class DetailsViewController: UIViewController {
     
     var reachability : Reachability?
     var details: Details?
+    
 
+    @IBOutlet var lbl1: UILabel!
+    @IBOutlet var lbl2: UILabel!
+    @IBOutlet var lbl3: UILabel!
+    @IBOutlet var myImg: UIImageView!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         getDetailsApi()
@@ -46,7 +54,13 @@ extension DetailsViewController {
                 switch result {
                 case .success(let response):
                     self.details = response
-//                    self.tableView.reloadData()
+                    
+                    self.lbl1.text = self.details?.title
+                    self.lbl2.text = self.details?.overview
+//                    self.lbl2.text = self.details?.originalLanguage
+//                    self.myImg.imageFromUrl(urlString: self.details?.posterPath)
+
+
                 case .failure(let error):
                     print("error >>>>", error.localizedDescription)
                 }
@@ -55,3 +69,20 @@ extension DetailsViewController {
     }
 }
 
+
+
+// MARK: ImageView Extension
+extension UIImageView {
+    public func imageFromUrl(urlString: String?) {
+        guard let imageURLString = urlString else {
+            self.image = UIImage(named: "default.png")
+            return
+        }
+        DispatchQueue.global().async { [weak self] in
+            let data = try? Data(contentsOf: URL(string: imageURLString)!)
+            DispatchQueue.main.async {
+                self?.image = data != nil ? UIImage(data: data!) : UIImage()
+            }
+        }
+    }
+}
