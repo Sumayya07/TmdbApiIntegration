@@ -17,7 +17,7 @@ class DetailsViewController: UIViewController {
 
     @IBOutlet var lbl1: UILabel!
     @IBOutlet var lbl2: UILabel!
-    @IBOutlet var lbl3: UILabel!
+    
     @IBOutlet var myImg: UIImageView!
     
     
@@ -57,8 +57,7 @@ extension DetailsViewController {
                     
                     self.lbl1.text = self.details?.title
                     self.lbl2.text = self.details?.overview
-//                    self.lbl2.text = self.details?.originalLanguage
-//                    self.myImg.imageFromUrl(urlString: self.details?.posterPath)
+                    self.myImg.imageFromUrl(urlString: self.details?.posterPath)
 
 
                 case .failure(let error):
