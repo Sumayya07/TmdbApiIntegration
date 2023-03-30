@@ -17,11 +17,9 @@ class DetailsViewController: UIViewController {
 
     @IBOutlet var lbl1: UILabel!
     @IBOutlet var lbl2: UILabel!
-    
     @IBOutlet var myImg: UIImageView!
     
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         getDetailsApi()
