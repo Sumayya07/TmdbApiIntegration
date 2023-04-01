@@ -55,8 +55,12 @@ extension DetailsViewController {
                     
                     self.lbl1.text = self.details?.title
                     self.lbl2.text = self.details?.overview
-                    self.myImg.imageFromUrl(urlString: self.details?.posterPath)
-
+                                    
+                    
+                    self.myImg.imageFromUrl(urlString: "https://image.tmdb.org/t/p/w500\(self.details?.posterPath ?? "")")
+                    
+//                    print("https://image.tmdb.org/t/p/w500\(self.details?.posterPath ?? "")")
+                    
 
                 case .failure(let error):
                     print("error >>>>", error.localizedDescription)
@@ -68,18 +72,5 @@ extension DetailsViewController {
 
 
 
-// MARK: ImageView Extension
-extension UIImageView {
-    public func imageFromUrl(urlString: String?) {
-        guard let imageURLString = urlString else {
-            self.image = UIImage(named: "default.png")
-            return
-        }
-        DispatchQueue.global().async { [weak self] in
-            let data = try? Data(contentsOf: URL(string: imageURLString)!)
-            DispatchQueue.main.async {
-                self?.image = data != nil ? UIImage(data: data!) : UIImage()
-            }
-        }
-    }
-}
+
+
