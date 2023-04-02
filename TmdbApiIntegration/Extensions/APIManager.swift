@@ -14,6 +14,8 @@ class APIManager {
     
     let titlesApi = "https://api.themoviedb.org/3/movie/725201/alternative_titles?api_key=e8db82ed17e9ab064d2bd8cad9b06a94"
     
+    let changesApi = "https://api.themoviedb.org/3/movie/725201/changes?api_key=e8db82ed17e9ab064d2bd8cad9b06a94&page=1"
+    
     
     
     
