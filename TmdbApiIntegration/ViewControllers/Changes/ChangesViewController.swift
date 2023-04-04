@@ -57,8 +57,8 @@ extension ChangesViewController {
                     
                     
                     self.lbl1.text = self.changes?.action
-                    self.lbl1.text = self.changes?.id
-                    self.lbl1.text = self.changes?.time
+                    self.lbl2.text = self.changes?.id
+                    self.lbl3.text = self.changes?.originalValue
                     
                 case .failure(let error):
                     print("error >>>>", error.localizedDescription)
