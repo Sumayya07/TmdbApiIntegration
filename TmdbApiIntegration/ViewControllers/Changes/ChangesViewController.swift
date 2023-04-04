@@ -12,7 +12,7 @@ import MBProgressHUD
 class ChangesViewController: UIViewController {
     
     var reachability : Reachability?
-    var changes: Item?
+    var changes: Changes?
     
     @IBOutlet var lbl1: UILabel!
     @IBOutlet var lbl2: UILabel!
@@ -47,23 +47,26 @@ extension ChangesViewController {
             request.httpMethod = "GET"
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
             
-            APIManager.shared.load(urlRequest: request, type: Item.self) { result in
-                DispatchQueue.main.async {
-                    MBProgressHUD.hide(for: self.view, animated: true)
-                }
-                switch result {
-                case .success(let response):
-                    self.changes = response
-                    
-                    
-                    self.lbl1.text = self.changes?.action
-                    self.lbl2.text = self.changes?.id
-                    self.lbl3.text = self.changes?.originalValue
-                    
-                case .failure(let error):
-                    print("error >>>>", error.localizedDescription)
-                }
-            }
+            APIManager.shared.load(urlRequest: request, type: Changes.self) { result in
+                            DispatchQueue.main.async {
+                                MBProgressHUD.hide(for: self.view, animated: true)
+                            }
+                            switch result {
+                            case .success(let response):
+                                self.changes = response
+                                if let changes = self.changes?.changes, changes.count > 0 {
+                                    let items = changes[0].items
+                                    if items.count > 0 {
+                                        self.lbl1.text = items[0].action
+                                        self.lbl2.text = items[0].id
+                                        self.lbl3.text = items[0].originalValue
+                                    }
+                                }
+                                
+                            case .failure(let error):
+                                print("error >>>>", error.localizedDescription)
+                            }
+                        }
         }
     }
 }
