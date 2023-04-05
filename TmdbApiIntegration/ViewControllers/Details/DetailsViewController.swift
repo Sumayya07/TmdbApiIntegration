@@ -56,7 +56,6 @@ extension DetailsViewController {
                     self.lbl1.text = self.details?.title
                     self.lbl2.text = self.details?.overview
                                     
-                    
                     self.myImg.imageFromUrl(urlString: "https://image.tmdb.org/t/p/w500\(self.details?.posterPath ?? "")")
                     
 //                    print("https://image.tmdb.org/t/p/w500\(self.details?.posterPath ?? "")")
