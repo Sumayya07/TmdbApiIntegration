@@ -16,6 +16,8 @@ class APIManager {
     
     let changesApi = "https://api.themoviedb.org/3/movie/725201/changes?api_key=e8db82ed17e9ab064d2bd8cad9b06a94&page=1&start_date=11-01-2023&end_date=21-01-2023"
     
+    let creditsApi = "https://api.themoviedb.org/3/movie/725201/credits?api_key=e8db82ed17e9ab064d2bd8cad9b06a94&language=en-US"
+    
     
     
     

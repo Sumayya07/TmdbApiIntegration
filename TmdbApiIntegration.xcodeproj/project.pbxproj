@@ -11,6 +11,9 @@
 		CA00C98629D558C100950405 /* TitlesModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA00C98529D558C100950405 /* TitlesModelData.swift */; };
 		CA00C98929D5614400950405 /* TitlesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA00C98829D5614300950405 /* TitlesTVC.swift */; };
 		CA63DF8229D7FED600E9F2E6 /* ImgView + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA63DF8129D7FED600E9F2E6 /* ImgView + Ext.swift */; };
+		CA64461729DD549C00E186A1 /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA64461629DD549C00E186A1 /* CreditsViewController.swift */; };
+		CA64461929DD54B000E186A1 /* CreditsModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA64461829DD54B000E186A1 /* CreditsModelData.swift */; };
+		CA64461B29DD55FA00E186A1 /* CreditsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA64461A29DD55FA00E186A1 /* CreditsTVC.swift */; };
 		CAA85C5029D97A11000DE4C2 /* ChangesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA85C4F29D97A11000DE4C2 /* ChangesViewController.swift */; };
 		CAA85C5229D97A38000DE4C2 /* ChangesModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA85C5129D97A38000DE4C2 /* ChangesModelData.swift */; };
 		CACAEB8629D2E1F400AC4501 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACAEB8529D2E1F400AC4501 /* AppDelegate.swift */; };
@@ -30,6 +33,9 @@
 		CA00C98529D558C100950405 /* TitlesModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlesModelData.swift; sourceTree = "<group>"; };
 		CA00C98829D5614300950405 /* TitlesTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlesTVC.swift; sourceTree = "<group>"; };
 		CA63DF8129D7FED600E9F2E6 /* ImgView + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImgView + Ext.swift"; sourceTree = "<group>"; };
+		CA64461629DD549C00E186A1 /* CreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
+		CA64461829DD54B000E186A1 /* CreditsModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsModelData.swift; sourceTree = "<group>"; };
+		CA64461A29DD55FA00E186A1 /* CreditsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsTVC.swift; sourceTree = "<group>"; };
 		CAA85C4F29D97A11000DE4C2 /* ChangesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangesViewController.swift; sourceTree = "<group>"; };
 		CAA85C5129D97A38000DE4C2 /* ChangesModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangesModelData.swift; sourceTree = "<group>"; };
 		CACAEB8229D2E1F400AC4501 /* TmdbApiIntegration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TmdbApiIntegration.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				CA00C98829D5614300950405 /* TitlesTVC.swift */,
+				CA64461A29DD55FA00E186A1 /* CreditsTVC.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -81,6 +88,15 @@
 				CA63DF8129D7FED600E9F2E6 /* ImgView + Ext.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CA64461529DD547600E186A1 /* Credits */ = {
+			isa = PBXGroup;
+			children = (
+				CA64461629DD549C00E186A1 /* CreditsViewController.swift */,
+				CA64461829DD54B000E186A1 /* CreditsModelData.swift */,
+			);
+			path = Credits;
 			sourceTree = "<group>";
 		};
 		CAA85C4E29D979F4000DE4C2 /* Changes */ = {
@@ -135,6 +151,7 @@
 		CACAEB9A29D2E4CA00AC4501 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				CA64461529DD547600E186A1 /* Credits */,
 				CAA85C4E29D979F4000DE4C2 /* Changes */,
 				CA00C98229D5587000950405 /* AlternativeTitles */,
 				CACAEB9B29D2E56400AC4501 /* Details */,
@@ -232,11 +249,14 @@
 			files = (
 				CA00C98629D558C100950405 /* TitlesModelData.swift in Sources */,
 				CACAEB8A29D2E1F400AC4501 /* DetailsViewController.swift in Sources */,
+				CA64461929DD54B000E186A1 /* CreditsModelData.swift in Sources */,
 				CACAEB8629D2E1F400AC4501 /* AppDelegate.swift in Sources */,
 				CACAEB9F29D2E6CF00AC4501 /* APIManager.swift in Sources */,
 				CAA85C5029D97A11000DE4C2 /* ChangesViewController.swift in Sources */,
+				CA64461B29DD55FA00E186A1 /* CreditsTVC.swift in Sources */,
 				CA00C98929D5614400950405 /* TitlesTVC.swift in Sources */,
 				CAA85C5229D97A38000DE4C2 /* ChangesModelData.swift in Sources */,
+				CA64461729DD549C00E186A1 /* CreditsViewController.swift in Sources */,
 				CA00C98429D558A800950405 /* TitlesViewController.swift in Sources */,
 				CA63DF8229D7FED600E9F2E6 /* ImgView + Ext.swift in Sources */,
 				CACAEB9D29D2E5A300AC4501 /* DetailsModelData.swift in Sources */,
