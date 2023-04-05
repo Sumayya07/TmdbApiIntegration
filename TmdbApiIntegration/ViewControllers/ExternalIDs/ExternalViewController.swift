@@ -10,6 +10,12 @@ import Reachability
 import MBProgressHUD
 
 class ExternalViewController: UIViewController {
+
+    @IBOutlet var idLbl: UILabel!
+    @IBOutlet var imdbLbl: UILabel!
+    @IBOutlet var facebookLbl: UILabel!
+    @IBOutlet var instagramLbl: UILabel!
+    @IBOutlet var twitterLbl: UILabel!
     
     var reachability: Reachability?
     var external: External?
@@ -44,6 +50,12 @@ extension ExternalViewController {
                 switch result {
                 case .success(let response):
                     self.external = response
+                    
+//                    self.idLbl.text = self.external?.id
+//                    self.imdbLbl.text = self.external?.imdbID
+//                    self.facebookLbl.text = self.external?.facebookID
+//                    self.instagramLbl.text = self.external?.instagramID
+//                    self.twitterLbl.text = self.external?.twitterID
                     
                 case .failure(let error):
                     print("error >>>>", error.localizedDescription)
