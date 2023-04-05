@@ -18,7 +18,7 @@ class APIManager {
     
     let creditsApi = "https://api.themoviedb.org/3/movie/725201/credits?api_key=e8db82ed17e9ab064d2bd8cad9b06a94&language=en-US"
     
-    
+    let externalApi = "https://api.themoviedb.org/3/movie/725201/external_ids?api_key=e8db82ed17e9ab064d2bd8cad9b06a94"
     
     
     func load<T: Decodable>(urlRequest: URLRequest, type:T.Type, completion: @escaping (Result<T,Error>) -> Void) {

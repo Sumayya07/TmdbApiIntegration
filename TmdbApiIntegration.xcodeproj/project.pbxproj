@@ -14,6 +14,8 @@
 		CA64461729DD549C00E186A1 /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA64461629DD549C00E186A1 /* CreditsViewController.swift */; };
 		CA64461929DD54B000E186A1 /* CreditsModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA64461829DD54B000E186A1 /* CreditsModelData.swift */; };
 		CA64461B29DD55FA00E186A1 /* CreditsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA64461A29DD55FA00E186A1 /* CreditsTVC.swift */; };
+		CA64461E29DD63C200E186A1 /* ExternalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA64461D29DD63C200E186A1 /* ExternalViewController.swift */; };
+		CA64462029DD63D300E186A1 /* ExternalModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA64461F29DD63D300E186A1 /* ExternalModelData.swift */; };
 		CAA85C5029D97A11000DE4C2 /* ChangesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA85C4F29D97A11000DE4C2 /* ChangesViewController.swift */; };
 		CAA85C5229D97A38000DE4C2 /* ChangesModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA85C5129D97A38000DE4C2 /* ChangesModelData.swift */; };
 		CACAEB8629D2E1F400AC4501 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACAEB8529D2E1F400AC4501 /* AppDelegate.swift */; };
@@ -36,6 +38,8 @@
 		CA64461629DD549C00E186A1 /* CreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
 		CA64461829DD54B000E186A1 /* CreditsModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsModelData.swift; sourceTree = "<group>"; };
 		CA64461A29DD55FA00E186A1 /* CreditsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsTVC.swift; sourceTree = "<group>"; };
+		CA64461D29DD63C200E186A1 /* ExternalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalViewController.swift; sourceTree = "<group>"; };
+		CA64461F29DD63D300E186A1 /* ExternalModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalModelData.swift; sourceTree = "<group>"; };
 		CAA85C4F29D97A11000DE4C2 /* ChangesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangesViewController.swift; sourceTree = "<group>"; };
 		CAA85C5129D97A38000DE4C2 /* ChangesModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangesModelData.swift; sourceTree = "<group>"; };
 		CACAEB8229D2E1F400AC4501 /* TmdbApiIntegration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TmdbApiIntegration.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,6 +103,15 @@
 			path = Credits;
 			sourceTree = "<group>";
 		};
+		CA64461C29DD62E300E186A1 /* ExternalIDs */ = {
+			isa = PBXGroup;
+			children = (
+				CA64461D29DD63C200E186A1 /* ExternalViewController.swift */,
+				CA64461F29DD63D300E186A1 /* ExternalModelData.swift */,
+			);
+			path = ExternalIDs;
+			sourceTree = "<group>";
+		};
 		CAA85C4E29D979F4000DE4C2 /* Changes */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +164,7 @@
 		CACAEB9A29D2E4CA00AC4501 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				CA64461C29DD62E300E186A1 /* ExternalIDs */,
 				CA64461529DD547600E186A1 /* Credits */,
 				CAA85C4E29D979F4000DE4C2 /* Changes */,
 				CA00C98229D5587000950405 /* AlternativeTitles */,
@@ -251,6 +265,7 @@
 				CACAEB8A29D2E1F400AC4501 /* DetailsViewController.swift in Sources */,
 				CA64461929DD54B000E186A1 /* CreditsModelData.swift in Sources */,
 				CACAEB8629D2E1F400AC4501 /* AppDelegate.swift in Sources */,
+				CA64462029DD63D300E186A1 /* ExternalModelData.swift in Sources */,
 				CACAEB9F29D2E6CF00AC4501 /* APIManager.swift in Sources */,
 				CAA85C5029D97A11000DE4C2 /* ChangesViewController.swift in Sources */,
 				CA64461B29DD55FA00E186A1 /* CreditsTVC.swift in Sources */,
@@ -259,6 +274,7 @@
 				CA64461729DD549C00E186A1 /* CreditsViewController.swift in Sources */,
 				CA00C98429D558A800950405 /* TitlesViewController.swift in Sources */,
 				CA63DF8229D7FED600E9F2E6 /* ImgView + Ext.swift in Sources */,
+				CA64461E29DD63C200E186A1 /* ExternalViewController.swift in Sources */,
 				CACAEB9D29D2E5A300AC4501 /* DetailsModelData.swift in Sources */,
 				CACAEB8829D2E1F400AC4501 /* SceneDelegate.swift in Sources */,
 			);

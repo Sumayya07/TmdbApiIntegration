@@ -38,7 +38,7 @@ extension CreditsViewController: UITableViewDelegate, UITableViewDataSource {
         cell.lbl1.text = item?.name
         cell.lbl2.text = item?.character
         cell.lbl3.text = item?.creditID
-//        cell.lbl4.text = item?.department
+        cell.lbl4.text = item?.department
         
         return cell
 
