@@ -51,8 +51,8 @@ extension ExternalViewController {
                 case .success(let response):
                     self.external = response
                     
-                    self.idLbl.text = self.external?.id
-//                    self.imdbLbl.text = self.external?.imdbID
+                    self.idLbl.text = self.external?.id.description
+                    self.imdbLbl.text = self.external?.imdbID.description
 //                    self.facebookLbl.text = self.external?.facebookID
 //                    self.instagramLbl.text = self.external?.instagramID
 //                    self.twitterLbl.text = self.external?.twitterID

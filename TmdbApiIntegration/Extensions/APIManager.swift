@@ -20,6 +20,8 @@ class APIManager {
     
     let externalApi = "https://api.themoviedb.org/3/movie/725201/external_ids?api_key=e8db82ed17e9ab064d2bd8cad9b06a94"
     
+    let keywordApi = "https://api.themoviedb.org/3/movie/725201/keywords?api_key=e8db82ed17e9ab064d2bd8cad9b06a94"
+    
     
     func load<T: Decodable>(urlRequest: URLRequest, type:T.Type, completion: @escaping (Result<T,Error>) -> Void) {
         let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
