@@ -21,11 +21,14 @@ class ChangesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getChanges()
-        
         lbl1.layer.cornerRadius = 10
         lbl2.layer.cornerRadius = 10
         lbl3.layer.cornerRadius = 10
+        
+        navigationController?.navigationBar.isHidden = false
+        navigationItem.title = "Changes"
+        navigationItem.backButtonTitle = "Titles"
+        getChanges()
 
     }
     

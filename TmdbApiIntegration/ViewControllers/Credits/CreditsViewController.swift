@@ -18,6 +18,8 @@ class CreditsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.isHidden = false
+        navigationItem.title = "Credits"
         getCreditsApi()
     }
 }

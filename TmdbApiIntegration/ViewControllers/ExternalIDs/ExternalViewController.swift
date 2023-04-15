@@ -22,6 +22,8 @@ class ExternalViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.isHidden = false
+        navigationItem.title = "External IDs"
         getExternalApi()
 
     }

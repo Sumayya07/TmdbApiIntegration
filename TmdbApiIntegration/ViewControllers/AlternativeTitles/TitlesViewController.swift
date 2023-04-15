@@ -19,6 +19,8 @@ class TitlesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.isHidden = false
+        navigationItem.title = "Alternative Titles"
         getAlternativeTitlesApi()
 
 

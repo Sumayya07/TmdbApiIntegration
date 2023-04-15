@@ -15,19 +15,60 @@ class DetailsViewController: UIViewController {
     var details: Details?
     
 
-    @IBOutlet var lbl1: UILabel!
-    @IBOutlet var lbl2: UILabel!
-    @IBOutlet var myImg: UIImageView!
+    @IBOutlet var lblMovieName: UILabel!
+    @IBOutlet var lblMovieOverview: UILabel!
+    @IBOutlet var imgMoviePoster: UIImageView!
     
-
+    @IBOutlet var btnKeywords: UIButton!
+    @IBOutlet var btnChanges: UIButton!
+    @IBOutlet var btnCredits: UIButton!
+    @IBOutlet var btnTitles: UIButton!
+    @IBOutlet var btnExternalIDs: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.isHidden = false
+        navigationItem.title = "The Gray Man"
+        navigationItem.backButtonTitle = ""
+        
+        btnKeywords.borderDesign()
+        btnChanges.borderDesign()
+        btnCredits.borderDesign()
+        btnTitles.borderDesign()
+        btnExternalIDs.borderDesign()
+        
         getDetailsApi()
         
-        
     }
-
-
+    
+    
+    
+    @IBAction func btnKeywordTapped(_ sender: Any) {
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "KeywordViewController") as! KeywordViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func btnChangeTapped(_ sender: Any) {
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ChangesViewController") as! ChangesViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+    @IBAction func btnCreditTapped(_ sender: Any) {
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "CreditsViewController") as! CreditsViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func btnTitleTapped(_ sender: Any) {
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "TitlesViewController") as! TitlesViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func btnExternalTapped(_ sender: Any) {
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ExternalViewController") as! ExternalViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
 
 extension DetailsViewController {
@@ -53,10 +94,10 @@ extension DetailsViewController {
                 case .success(let response):
                     self.details = response
                     
-                    self.lbl1.text = self.details?.title
-                    self.lbl2.text = self.details?.overview
+                    self.lblMovieName.text = self.details?.title
+                    self.lblMovieOverview.text = self.details?.overview
                                     
-                    self.myImg.imageFromUrl(urlString: "https://image.tmdb.org/t/p/w500\(self.details?.posterPath ?? "")")
+                    self.imgMoviePoster.imageFromUrl(urlString: "https://image.tmdb.org/t/p/w500\(self.details?.posterPath ?? "")")
                     
 //                    print("https://image.tmdb.org/t/p/w500\(self.details?.posterPath ?? "")")
                     

@@ -10,6 +10,8 @@ import Foundation
 class APIManager {
     static let shared = APIManager()
     
+    let movieListApi = "https://api.themoviedb.org/3/genre/movie/list?api_key=e8db82ed17e9ab064d2bd8cad9b06a94&language=en-US"
+    
     let detailsApi = "https://api.themoviedb.org/3/movie/725201?api_key=e8db82ed17e9ab064d2bd8cad9b06a94&language=en-US"
     
     let titlesApi = "https://api.themoviedb.org/3/movie/725201/alternative_titles?api_key=e8db82ed17e9ab064d2bd8cad9b06a94"
@@ -22,8 +24,12 @@ class APIManager {
     
     let keywordApi = "https://api.themoviedb.org/3/movie/725201/keywords?api_key=e8db82ed17e9ab064d2bd8cad9b06a94"
     
+    let listsApi = "https://api.themoviedb.org/3/movie/725201/lists?api_key=e8db82ed17e9ab064d2bd8cad9b06a94&language=en-US&page=1"
     
-    func load<T: Decodable>(urlRequest: URLRequest, type:T.Type, completion: @escaping (Result<T,Error>) -> Void) {
+    let recommendationsApi = "https://api.themoviedb.org/3/movie/725201/recommendations?api_key=e8db82ed17e9ab064d2bd8cad9b06a94&language=en-US&page=1"
+    
+    
+    func load<T: Decodable>(urlRequest: URLRequest, type:T.Type, completion: @escaping (Swift.Result<T,Error>) -> Void) {
         let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
             if let error = error {
                 DispatchQueue.main.async {

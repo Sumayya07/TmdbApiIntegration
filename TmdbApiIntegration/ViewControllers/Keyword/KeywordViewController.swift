@@ -19,6 +19,8 @@ class KeywordViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.isHidden = false
+        navigationItem.title = "Keywords"
         getKeywordsApi()
 
     }
