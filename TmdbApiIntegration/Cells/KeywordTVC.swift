@@ -9,7 +9,7 @@ import UIKit
 
 class KeywordTVC: UITableViewCell {
 
-    @IBOutlet var idLbl: UILabel!
-    @IBOutlet var nameLbl: UILabel!
+    @IBOutlet var lblID: UILabel!
+    @IBOutlet var lblName: UILabel!
     
 }

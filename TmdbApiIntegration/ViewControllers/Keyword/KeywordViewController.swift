@@ -36,8 +36,8 @@ extension KeywordViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "KeywordTVC") as? KeywordTVC else { return UITableViewCell() }
         let item = keyword?.keywords[indexPath.row]
-        cell.idLbl.text = "\(item?.id ?? 0)"
-        cell.nameLbl.text = item?.name
+        cell.lblID.text = "\(item?.id ?? 0)"
+        cell.lblName.text = item?.name
         return cell
 
     }
