@@ -24,6 +24,7 @@ class DetailsViewController: UIViewController {
     @IBOutlet var btnCredits: UIButton!
     @IBOutlet var btnTitles: UIButton!
     @IBOutlet var btnExternalIDs: UIButton!
+    @IBOutlet var btnRecommendations: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,11 +32,12 @@ class DetailsViewController: UIViewController {
         navigationItem.title = "The Gray Man"
         navigationItem.backButtonTitle = ""
         
-        btnKeywords.borderDesign()
-        btnChanges.borderDesign()
-        btnCredits.borderDesign()
-        btnTitles.borderDesign()
-        btnExternalIDs.borderDesign()
+        btnKeywords.blueBorderDesign()
+        btnChanges.blueBorderDesign()
+        btnCredits.blueBorderDesign()
+        btnTitles.blueBorderDesign()
+        btnExternalIDs.blueBorderDesign()
+        btnRecommendations.cornerRadius()
         
         getDetailsApi()
         
@@ -66,6 +68,12 @@ class DetailsViewController: UIViewController {
     
     @IBAction func btnExternalTapped(_ sender: Any) {
         let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ExternalViewController") as! ExternalViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+    @IBAction func btnRecommendationTapped(_ sender: Any) {
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "RecommendationsViewController") as! RecommendationsViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

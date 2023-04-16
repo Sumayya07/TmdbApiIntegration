@@ -13,9 +13,14 @@ extension UIButton {
     public func cornerRadius() {
         self.layer.cornerRadius = frame.size.height/2
     }
-    public func borderDesign() {
+    public func blueBorderDesign() {
         self.layer.cornerRadius = frame.size.height/2
         self.layer.borderWidth = 1
         self.layer.borderColor = UIColor(named: "Blue")?.cgColor
+    }
+    public func greenBorderDesign() {
+        self.layer.cornerRadius = frame.size.height/2
+        self.layer.borderWidth = 1
+        self.layer.borderColor = UIColor(named: "Green")?.cgColor
     }
 }

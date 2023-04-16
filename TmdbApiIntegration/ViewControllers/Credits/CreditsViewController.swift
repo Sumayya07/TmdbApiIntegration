@@ -19,7 +19,7 @@ class CreditsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = false
-        navigationItem.title = "Credits"
+        navigationItem.title = "Cast"
         getCreditsApi()
     }
 }
@@ -36,11 +36,12 @@ extension CreditsViewController: UITableViewDelegate, UITableViewDataSource {
         
         let item = credits?.cast[indexPath.row]
         
-        cell.mainView.layer.cornerRadius = 20
-        cell.lbl1.text = item?.name
-        cell.lbl2.text = item?.character
-        cell.lbl3.text = item?.creditID
-        cell.lbl4.text = item?.knownForDepartment.rawValue
+        cell.viewMain.layer.cornerRadius = 20
+        cell.viewMain.layer.borderWidth = 1
+        cell.viewMain.layer.borderColor = UIColor(named: "Blue")?.cgColor
+        cell.lblCelebrityName.text = item?.name
+        cell.lblCharacter.text = item?.character
+        cell.lblDepartment.text = item?.knownForDepartment.rawValue
         
         return cell
 

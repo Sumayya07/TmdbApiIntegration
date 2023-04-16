@@ -14,20 +14,16 @@ class ChangesViewController: UIViewController {
     var reachability : Reachability?
     var changes: Changes?
     
-    @IBOutlet var lbl1: UILabel!
-    @IBOutlet var lbl2: UILabel!
-    @IBOutlet var lbl3: UILabel!
+    @IBOutlet var lblAction: UILabel!
+    @IBOutlet var lblOriginalValue: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        lbl1.layer.cornerRadius = 10
-        lbl2.layer.cornerRadius = 10
-        lbl3.layer.cornerRadius = 10
-        
         navigationController?.navigationBar.isHidden = false
         navigationItem.title = "Changes"
         navigationItem.backButtonTitle = "Titles"
+        
         getChanges()
 
     }
@@ -60,9 +56,8 @@ extension ChangesViewController {
                                 if let changes = self.changes?.changes, changes.count > 0 {
                                     let items = changes[0].items
                                     if items.count > 0 {
-                                        self.lbl1.text = items[0].action
-                                        self.lbl2.text = items[0].id
-                                        self.lbl3.text = items[0].originalValue
+                                        self.lblAction.text = items[0].action
+                                        self.lblOriginalValue.text = items[0].originalValue
                                     }
                                 }
                                 

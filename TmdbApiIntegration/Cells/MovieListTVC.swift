@@ -9,7 +9,7 @@ import UIKit
 
 class MovieListTVC: UITableViewCell {
     
-    @IBOutlet var lblMovieId: UILabel!
+//    @IBOutlet var lblMovieId: UILabel!
     @IBOutlet var lblMovieName: UILabel!
 
 }

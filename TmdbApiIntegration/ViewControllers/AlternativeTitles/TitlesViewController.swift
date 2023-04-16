@@ -36,18 +36,10 @@ extension TitlesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "TitlesTVC") as? TitlesTVC else { return UITableViewCell() }
-        
-        
-        
+    
         let item = titles?.titles[indexPath.row]
-        cell.lbl1.text = item?.iso3166_1
-        cell.lbl2.text = item?.title
-        cell.lbl3.text = item?.type
-                
-        cell.lbl1.layer.cornerRadius = 10
-        cell.lbl2.layer.cornerRadius = 10
-        cell.lbl3.layer.cornerRadius = 10
-        
+        cell.lblTitleOne.text = item?.iso3166_1
+        cell.lblTitleTwo.text = item?.title
         return cell
 
     }

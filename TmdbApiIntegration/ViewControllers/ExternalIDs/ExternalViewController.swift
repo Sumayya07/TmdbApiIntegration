@@ -11,11 +11,11 @@ import MBProgressHUD
 
 class ExternalViewController: UIViewController {
 
-    @IBOutlet var idLbl: UILabel!
-    @IBOutlet var imdbLbl: UILabel!
-    @IBOutlet var facebookLbl: UILabel!
-    @IBOutlet var instagramLbl: UILabel!
-    @IBOutlet var twitterLbl: UILabel!
+    @IBOutlet var lblID: UILabel!
+    @IBOutlet var lblImdbId: UILabel!
+    @IBOutlet var lblFacebookId: UILabel!
+    @IBOutlet var lblInstagramId: UILabel!
+    @IBOutlet var lblTwitterId: UILabel!
     
     var reachability: Reachability?
     var external: External?
@@ -53,11 +53,11 @@ extension ExternalViewController {
                 case .success(let response):
                     self.external = response
                     
-                    self.idLbl.text = self.external?.id.description
-                    self.imdbLbl.text = self.external?.imdbID.description
-//                    self.facebookLbl.text = self.external?.facebookID
-//                    self.instagramLbl.text = self.external?.instagramID
-//                    self.twitterLbl.text = self.external?.twitterID
+                    self.lblID.text = self.external?.id.description
+                    self.lblImdbId.text = self.external?.imdbID.description
+//                    self.lblFacebookId.text = self.external?.facebookID
+//                    self.lblInstagramId.text = self.external?.instagramID
+//                    self.lblTwitterId.text = self.external?.twitterID
                     
                 case .failure(let error):
                     print("error >>>>", error.localizedDescription)

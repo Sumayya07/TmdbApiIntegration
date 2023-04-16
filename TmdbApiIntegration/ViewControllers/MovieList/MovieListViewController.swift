@@ -45,7 +45,7 @@ extension MovieListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MovieListTVC") as? MovieListTVC else { return UITableViewCell() }
         let item = movieList?.genres?[indexPath.row]
-        cell.lblMovieId.text = "\(item?.id ?? 0)"
+//        cell.lblMovieId.text = "\(item?.id ?? 0)"
         cell.lblMovieName.text = item?.name
         return cell
 

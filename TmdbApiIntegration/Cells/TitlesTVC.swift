@@ -9,8 +9,7 @@ import UIKit
 
 class TitlesTVC: UITableViewCell {
     
-    @IBOutlet var lbl1: UILabel!
-    @IBOutlet var lbl2: UILabel!
-    @IBOutlet var lbl3: UILabel!
+    @IBOutlet var lblTitleOne: UILabel!
+    @IBOutlet var lblTitleTwo: UILabel!
     
 }
