@@ -24,7 +24,7 @@ class DetailsViewController: UIViewController {
     @IBOutlet var btnCredits: UIButton!
     @IBOutlet var btnTitles: UIButton!
     @IBOutlet var btnExternalIDs: UIButton!
-    @IBOutlet var btnRecommendations: UIButton!
+    @IBOutlet var btnReviews: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,8 +37,7 @@ class DetailsViewController: UIViewController {
         btnCredits.blueBorderDesign()
         btnTitles.blueBorderDesign()
         btnExternalIDs.blueBorderDesign()
-        btnRecommendations.cornerRadius()
-        
+        btnReviews.blueBorderDesign()
         getDetailsApi()
         
     }
@@ -72,8 +71,8 @@ class DetailsViewController: UIViewController {
     }
     
     
-    @IBAction func btnRecommendationTapped(_ sender: Any) {
-        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "RecommendationsViewController") as! RecommendationsViewController
+    @IBAction func btnReviewTapped(_ sender: Any) {
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "RecommendatioReviewsViewControllernsViewController") as! ReviewsViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

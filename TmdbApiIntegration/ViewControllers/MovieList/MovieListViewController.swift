@@ -12,7 +12,7 @@ import MBProgressHUD
 class MovieListViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
-    @IBOutlet var btnClickHere: UIButton!
+    @IBOutlet var btnRecommendations: UIButton!
     
     var reachability : Reachability?
     var movieList: MovieList?
@@ -23,14 +23,14 @@ class MovieListViewController: UIViewController {
         navigationItem.title = "Movie List"
         navigationItem.backButtonTitle = ""
 
-        btnClickHere.cornerRadius()
+        btnRecommendations.cornerRadius()
         
         getMovieListApi()
     }
     
     
-    @IBAction func btnClickTapped(_ sender: Any) {
-        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
+    @IBAction func btnRecommendationsTapped(_ sender: Any) {
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "RecommendationsViewController") as! RecommendationsViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
@@ -52,8 +52,10 @@ extension MovieListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as? DetailsViewController {
-            self.navigationController?.pushViewController(vc, animated: true)
+        if indexPath.row == 0 {
+            if let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as? DetailsViewController {
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
         }
     }
 }

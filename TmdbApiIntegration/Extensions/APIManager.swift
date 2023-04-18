@@ -28,6 +28,12 @@ class APIManager {
     
     let recommendationsApi = "https://api.themoviedb.org/3/movie/725201/recommendations?api_key=e8db82ed17e9ab064d2bd8cad9b06a94&language=en-US&page=1"
     
+    let releaseDatesApi = "https://api.themoviedb.org/3/movie/725201/release_dates?api_key=e8db82ed17e9ab064d2bd8cad9b06a94"
+    
+    let reviewsApi = "https://api.themoviedb.org/3/movie/725201/reviews?api_key=e8db82ed17e9ab064d2bd8cad9b06a94&language=en-US&page=1"
+    
+    let similarMovies = "https://api.themoviedb.org/3/movie/725201/similar?api_key=e8db82ed17e9ab064d2bd8cad9b06a94&language=en-US&page=1"
+    
     
     func load<T: Decodable>(urlRequest: URLRequest, type:T.Type, completion: @escaping (Swift.Result<T,Error>) -> Void) {
         let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
