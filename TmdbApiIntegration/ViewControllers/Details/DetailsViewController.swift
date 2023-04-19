@@ -25,6 +25,8 @@ class DetailsViewController: UIViewController {
     @IBOutlet var btnTitles: UIButton!
     @IBOutlet var btnExternalIDs: UIButton!
     @IBOutlet var btnReviews: UIButton!
+    @IBOutlet var btnReleaseDates: UIButton!
+    @IBOutlet var btnSimilarMovies: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,8 +40,10 @@ class DetailsViewController: UIViewController {
         btnTitles.blueBorderDesign()
         btnExternalIDs.blueBorderDesign()
         btnReviews.blueBorderDesign()
-        getDetailsApi()
+        btnReleaseDates.blueBorderDesign()
+        btnSimilarMovies.cornerRadius()
         
+        getDetailsApi()
     }
     
     
@@ -72,7 +76,19 @@ class DetailsViewController: UIViewController {
     
     
     @IBAction func btnReviewTapped(_ sender: Any) {
-        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "RecommendatioReviewsViewControllernsViewController") as! ReviewsViewController
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ReviewsViewController") as! ReviewsViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+    @IBAction func btnReleaseTapped(_ sender: Any) {
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ReleaseDatesViewController") as! ReleaseDatesViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+    @IBAction func btnSimilarMoviesTapped(_ sender: Any) {
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "SimilarMoviesViewController") as! SimilarMoviesViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

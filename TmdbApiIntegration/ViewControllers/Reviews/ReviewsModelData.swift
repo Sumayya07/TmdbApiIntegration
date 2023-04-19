@@ -10,7 +10,7 @@ import Foundation
 // MARK: - Reviews
 struct Reviews: Decodable {
     let id, page: Int
-    let results: [Result]
+    let results: [ReviewsResult]
     let totalPages, totalResults: Int
 
     enum CodingKeys: String, CodingKey {
@@ -21,7 +21,7 @@ struct Reviews: Decodable {
 }
 
 // MARK: - Result
-struct Result: Decodable {
+struct ReviewsResult: Decodable {
     let author: String
     let authorDetails: AuthorDetails
     let content, createdAt, id, updatedAt: String

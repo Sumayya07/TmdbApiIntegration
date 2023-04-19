@@ -10,7 +10,7 @@ import Foundation
 // MARK: - Recommendations
 struct Recommendations: Codable {
     let page: Int
-    let results: [Result]
+    let results: [RecommendationsResult]
     let totalPages, totalResults: Int
 
     enum CodingKeys: String, CodingKey {
@@ -21,7 +21,7 @@ struct Recommendations: Codable {
 }
 
 // MARK: - Result
-struct Result: Codable {
+struct RecommendationsResult: Codable {
     let adult: Bool
     let backdropPath: String?
     let id: Int

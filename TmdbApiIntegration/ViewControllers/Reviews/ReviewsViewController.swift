@@ -14,7 +14,7 @@ class ReviewsViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     
     var reachability: Reachability?
-    var recommendation: Recommendations?
+    var review: Reviews?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,22 +28,19 @@ class ReviewsViewController: UIViewController {
 
 extension ReviewsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (self.recommendation?.results.count) ?? 0
+        return (self.review?.results.count) ?? 0
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewsTVC") as? ReviewsTVC else { return UITableViewCell() }
-//        let item = recommendation?.results[indexPath.row]
-//        cell.lblMovieTitle.text = item?.title
-//        cell.lblMovieOverview.text = item?.overview
-        cell.lblName.layer.cornerRadius = 14
-        cell.lblName.layer.borderWidth = 1
-        cell.lblName.layer.borderColor = UIColor(named: "Blue")?.cgColor
-        
-        cell.lblReview.layer.cornerRadius = 14
+        let item = review?.results[indexPath.row]
+        cell.lblName.text = item?.author
+        cell.lblReview.text = item?.content
+            
+        cell.lblReview.layer.cornerRadius = 8
         cell.lblReview.layer.borderWidth = 1
-        cell.lblReview.layer.borderColor = UIColor(named: "Blue")?.cgColor
+        cell.lblReview.layer.borderColor = UIColor(named: "Black")?.cgColor
         return cell
 
     }
@@ -64,13 +61,13 @@ extension ReviewsViewController {
             request.httpMethod = "GET"
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
             
-            APIManager.shared.load(urlRequest: request, type: Recommendations.self) { result in
+            APIManager.shared.load(urlRequest: request, type: Reviews.self) { result in
                 DispatchQueue.main.async {
                     MBProgressHUD.hide(for: self.view, animated: true)
                 }
                 switch result {
                 case .success(let response):
-                    self.recommendation = response
+                    self.review = response
                     self.tableView.reloadData()
                     
                 case .failure(let error):
