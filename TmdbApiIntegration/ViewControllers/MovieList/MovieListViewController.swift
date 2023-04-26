@@ -13,6 +13,10 @@ class MovieListViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
     @IBOutlet var btnRecommendations: UIButton!
+    @IBOutlet var btnPlaying: UIButton!
+    @IBOutlet var btnTopRated: UIButton!
+    @IBOutlet var btnUpcomingMovies: UIButton!
+    
     
     var reachability : Reachability?
     var movieList: MovieList?
@@ -24,6 +28,9 @@ class MovieListViewController: UIViewController {
         navigationItem.backButtonTitle = ""
 
         btnRecommendations.cornerRadius()
+        btnPlaying.cornerRadius()
+        btnTopRated.cornerRadius()
+        btnUpcomingMovies.cornerRadius()
         
         getMovieListApi()
     }
@@ -31,6 +38,22 @@ class MovieListViewController: UIViewController {
     
     @IBAction func btnRecommendationsTapped(_ sender: Any) {
         let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "RecommendationsViewController") as! RecommendationsViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func btnPlayingTapped(_ sender: Any) {
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "NowPlayingViewController") as! NowPlayingViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+    @IBAction func btnTopRatedTapped(_ sender: Any) {
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "TopRatedViewController") as! TopRatedViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func btnUpcomingMovieTapped(_ sender: Any) {
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "UpcomingViewController") as! UpcomingViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

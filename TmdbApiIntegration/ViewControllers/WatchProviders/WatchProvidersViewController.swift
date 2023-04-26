@@ -11,6 +11,8 @@ import MBProgressHUD
 
 class WatchProvidersViewController: UIViewController {
 
+    @IBOutlet var tableView: UITableView!
+    
     var reachability: Reachability?
     var watchProvider: WatchProviders?
 
@@ -64,7 +66,7 @@ extension WatchProvidersViewController {
                 switch result {
                 case .success(let response):
                     self.watchProvider = response
-//                    self.tableView.reloadData()
+                    self.tableView.reloadData()
 
                 case .failure(let error):
                     print("error >>>>", error.localizedDescription)

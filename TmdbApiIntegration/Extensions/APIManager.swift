@@ -40,6 +40,14 @@ class APIManager {
     
     let watchProvidersApi = "https://api.themoviedb.org/3/movie/725201/watch/providers?api_key=e8db82ed17e9ab064d2bd8cad9b06a94"
     
+    let popularApi = "https://api.themoviedb.org/3/movie/popular?api_key=e8db82ed17e9ab064d2bd8cad9b06a94&language=en-US&page=1"
+    
+    let nowPlayingApi = "https://api.themoviedb.org/3/movie/now_playing?api_key=e8db82ed17e9ab064d2bd8cad9b06a94&language=en-US&page=1"
+    
+    let topRatedApi = "https://api.themoviedb.org/3/movie/top_rated?api_key=e8db82ed17e9ab064d2bd8cad9b06a94&language=en-US&page=1"
+    
+    let upcomingMoviesApi = "https://api.themoviedb.org/3/movie/now_playing?api_key=e8db82ed17e9ab064d2bd8cad9b06a94&language=en-US&page=1"
+    
     
     func load<T: Decodable>(urlRequest: URLRequest, type:T.Type, completion: @escaping (Swift.Result<T,Error>) -> Void) {
         let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in

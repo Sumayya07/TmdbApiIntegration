@@ -12,6 +12,7 @@ import MBProgressHUD
 class RecommendationsViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var btnPopularMovies: UIButton!
     
     var reachability: Reachability?
     var recommendation: Recommendations?
@@ -20,10 +21,19 @@ class RecommendationsViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = false
         navigationItem.title = "Recommendations"
+        navigationItem.backButtonTitle = ""
+
+        btnPopularMovies.cornerRadius()
         getRecommendationsApi()
 
     }
-
+    
+    
+    @IBAction func btnPopularMoviesTapped(_ sender: Any) {
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "PopularViewController") as! PopularViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
 
 extension RecommendationsViewController: UITableViewDelegate, UITableViewDataSource {

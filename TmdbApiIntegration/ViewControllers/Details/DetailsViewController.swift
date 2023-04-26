@@ -29,6 +29,8 @@ class DetailsViewController: UIViewController {
     @IBOutlet var btnSimilarMovies: UIButton!
     @IBOutlet var btnTranslations: UIButton!
     @IBOutlet var btnVideos: UIButton!
+    @IBOutlet var btnWatchProviders: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +47,7 @@ class DetailsViewController: UIViewController {
         btnReleaseDates.blueBorderDesign()
         btnTranslations.blueBorderDesign()
         btnVideos.blueBorderDesign()
+        btnWatchProviders.blueBorderDesign()
         btnSimilarMovies.cornerRadius()
         
         getDetailsApi()
@@ -105,6 +108,12 @@ class DetailsViewController: UIViewController {
     
     @IBAction func btnVideoTapped(_ sender: Any) {
         let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "VideosViewController") as! VideosViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+    @IBAction func btnWatchProviderTapped(_ sender: Any) {
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "WatchProvidersViewController") as! WatchProvidersViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
