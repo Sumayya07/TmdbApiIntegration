@@ -32,7 +32,13 @@ class APIManager {
     
     let reviewsApi = "https://api.themoviedb.org/3/movie/725201/reviews?api_key=e8db82ed17e9ab064d2bd8cad9b06a94&language=en-US&page=1"
     
-    let similarMovies = "https://api.themoviedb.org/3/movie/725201/similar?api_key=e8db82ed17e9ab064d2bd8cad9b06a94&language=en-US&page=1"
+    let similarMoviesApi = "https://api.themoviedb.org/3/movie/725201/similar?api_key=e8db82ed17e9ab064d2bd8cad9b06a94&language=en-US&page=1"
+    
+    let translationsApi = "https://api.themoviedb.org/3/movie/725201/translations?api_key=e8db82ed17e9ab064d2bd8cad9b06a94"
+    
+    let videosApi = "https://api.themoviedb.org/3/movie/725201/videos?api_key=e8db82ed17e9ab064d2bd8cad9b06a94&language=en-US"
+    
+    let watchProvidersApi = "https://api.themoviedb.org/3/movie/725201/watch/providers?api_key=e8db82ed17e9ab064d2bd8cad9b06a94"
     
     
     func load<T: Decodable>(urlRequest: URLRequest, type:T.Type, completion: @escaping (Swift.Result<T,Error>) -> Void) {

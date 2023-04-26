@@ -27,6 +27,8 @@ class DetailsViewController: UIViewController {
     @IBOutlet var btnReviews: UIButton!
     @IBOutlet var btnReleaseDates: UIButton!
     @IBOutlet var btnSimilarMovies: UIButton!
+    @IBOutlet var btnTranslations: UIButton!
+    @IBOutlet var btnVideos: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +43,8 @@ class DetailsViewController: UIViewController {
         btnExternalIDs.blueBorderDesign()
         btnReviews.blueBorderDesign()
         btnReleaseDates.blueBorderDesign()
+        btnTranslations.blueBorderDesign()
+        btnVideos.blueBorderDesign()
         btnSimilarMovies.cornerRadius()
         
         getDetailsApi()
@@ -89,6 +93,18 @@ class DetailsViewController: UIViewController {
     
     @IBAction func btnSimilarMoviesTapped(_ sender: Any) {
         let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "SimilarMoviesViewController") as! SimilarMoviesViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+    @IBAction func btnTranslationTapped(_ sender: Any) {
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "TranslationViewController") as! TranslationViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+    @IBAction func btnVideoTapped(_ sender: Any) {
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "VideosViewController") as! VideosViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

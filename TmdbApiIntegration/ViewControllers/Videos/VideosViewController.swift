@@ -1,50 +1,50 @@
 //
-//  SimilarMoviesViewController.swift
+//  VideosViewController.swift
 //  TmdbApiIntegration
 //
-//  Created by Sumayya Siddiqui on 18/04/23.
+//  Created by Sumayya Siddiqui on 26/04/23.
 //
 
 import UIKit
-import MBProgressHUD
 import Reachability
+import MBProgressHUD
 
-class SimilarMoviesViewController: UIViewController {
+class VideosViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
     
     var reachability: Reachability?
-    var similarMovies: SimilarMovies?
+    var videos: Videos?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = false
-        navigationItem.title = "Similar Movies"
-        getSimilarMoviesApi()
+        navigationItem.title = "Videos"
+        getVideosApi()
 
     }
 
 }
 
-extension SimilarMoviesViewController: UITableViewDelegate, UITableViewDataSource {
+extension VideosViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (self.similarMovies?.results.count) ?? 0
+        return (self.videos?.results.count) ?? 0
 
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "SimilarMoviesTVC") as? SimilarMoviesTVC else { return UITableViewCell() }
-        let item = similarMovies?.results[indexPath.row]
-        cell.lblMovieTitle.text = item?.title
-        cell.lblMovieOverview.text = item?.overview
-        cell.imgMoviePoster.imageFromUrl(urlString: "https://image.tmdb.org/t/p/w500\(item?.posterPath ?? "")")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "VideosTVC") as? VideosTVC else { return UITableViewCell() }
+        let item = videos?.results[indexPath.row]
+        cell.lblName.text = item?.name
+        cell.lblSiteName.text = item?.site.rawValue
+        cell.selectionStyle = .none
         return cell
 
     }
 }
 
-extension SimilarMoviesViewController {
-    func getSimilarMoviesApi() {
+extension VideosViewController {
+    func getVideosApi() {
         do {
             self.reachability = try Reachability.init()
         } catch {
@@ -53,18 +53,18 @@ extension SimilarMoviesViewController {
         if ((reachability?.connection) != .unavailable) {
             MBProgressHUD.showAdded(to: self.view, animated: true)
 
-            guard let url = URL(string: APIManager.shared.similarMoviesApi) else { return }
+            guard let url = URL(string: APIManager.shared.videosApi) else { return }
             var request = URLRequest(url: url)
             request.httpMethod = "GET"
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
 
-            APIManager.shared.load(urlRequest: request, type: SimilarMovies.self) { result in
+            APIManager.shared.load(urlRequest: request, type: Videos.self) { result in
                 DispatchQueue.main.async {
                     MBProgressHUD.hide(for: self.view, animated: true)
                 }
                 switch result {
                 case .success(let response):
-                    self.similarMovies = response
+                    self.videos = response
                     self.tableView.reloadData()
 
                 case .failure(let error):
@@ -74,4 +74,3 @@ extension SimilarMoviesViewController {
         }
     }
 }
-
