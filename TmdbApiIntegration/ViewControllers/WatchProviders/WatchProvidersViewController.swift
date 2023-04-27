@@ -14,7 +14,7 @@ class WatchProvidersViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     
     var reachability: Reachability?
-    var watchProvider: WatchProviders?
+    var watchProvider: watchProviderResult?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,16 +28,15 @@ class WatchProvidersViewController: UIViewController {
 
 extension WatchProvidersViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (self.watchProvider?.results.count) ?? 0
+        return (self.watchProvider?.flatrate.count) ?? 0 
 
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "WatchProvidersTVC") as? WatchProvidersTVC else { return UITableViewCell() }
-//        let item = watchProvider?.results[indexPath.row]
-//        cell.lblLink.text = item?.link
-    
-//        cell.imgLogoPath.imageFromUrl(urlString: "https://image.tmdb.org/t/p/w500\(item? ?? "")")
+        let item = watchProvider?.flatrate[indexPath.row]
+        cell.lblLink.text = watchProvider?.link
+        cell.imgLogoPath.imageFromUrl(urlString: "https://image.tmdb.org/t/p/w500\(item?.logoPath)")
 
         return cell
 
@@ -59,7 +58,7 @@ extension WatchProvidersViewController {
             request.httpMethod = "GET"
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
 
-            APIManager.shared.load(urlRequest: request, type: WatchProviders.self) { result in
+            APIManager.shared.load(urlRequest: request, type: watchProviderResult.self) { result in
                 DispatchQueue.main.async {
                     MBProgressHUD.hide(for: self.view, animated: true)
                 }

@@ -146,9 +146,6 @@ extension DetailsViewController {
                     self.lblMovieOverview.text = self.details?.overview
                                     
                     self.imgMoviePoster.imageFromUrl(urlString: "https://image.tmdb.org/t/p/w500\(self.details?.posterPath ?? "")")
-                    
-//                    print("https://image.tmdb.org/t/p/w500\(self.details?.posterPath ?? "")")
-                    
 
                 case .failure(let error):
                     print("error >>>>", error.localizedDescription)
